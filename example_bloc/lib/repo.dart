@@ -3,7 +3,7 @@ class AuthRepo {
     await Future.delayed(const Duration(seconds: 1));
   }
 
-  Future<void> register(String email, String password) async {
+  Future<void> register(String username, String email, String password) async {
     await Future.delayed(const Duration(seconds: 1));
   }
 }

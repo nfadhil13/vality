@@ -1,0 +1,125 @@
+{
+  "@@locale": "id",
+  "notNull": "Field ini wajib diisi",
+  "notEmpty": "Field ini tidak boleh kosong",
+  "minLength": "Minimal {min} karakter",
+  "@minLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "maxLength": "Maksimal {max} karakter",
+  "@maxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "email": "Masukkan alamat email yang valid",
+  "url": "Masukkan URL yang valid",
+  "contains": "Harus mengandung \"{substring}\"",
+  "@contains": {
+    "placeholders": {
+      "substring": {
+        "type": "String"
+      }
+    }
+  },
+  "containsNofString": "Harus mengandung minimal {minCount} kemunculan \"{substring}\"",
+  "@containsNofString": {
+    "placeholders": {
+      "minCount": {
+        "type": "int"
+      },
+      "substring": {
+        "type": "String"
+      }
+    }
+  },
+  "containsNofRegex": "Harus mengandung minimal {minCount} kecocokan",
+  "@containsNofRegex": {
+    "placeholders": {
+      "minCount": {
+        "type": "int"
+      }
+    }
+  },
+  "startsWith": "Harus diawali dengan awalan yang ditentukan",
+  "endsWith": "Harus diakhiri dengan akhiran yang ditentukan",
+  "matches": "Harus sesuai dengan pola yang ditentukan",
+  "alphanumeric": "Hanya huruf dan angka yang diperbolehkan",
+  "numeric": "Hanya angka yang diperbolehkan",
+  "containsUpperCase": "Minimal {minCount} huruf besar",
+  "@containsUpperCase": {
+    "placeholders": {
+      "minCount": {
+        "type": "int"
+      }
+    }
+  },
+  "containsLowerCase": "Minimal {minCount} huruf kecil",
+  "@containsLowerCase": {
+    "placeholders": {
+      "minCount": {
+        "type": "int"
+      }
+    }
+  },
+  "containsNumbers": "Minimal {minCount} angka",
+  "@containsNumbers": {
+    "placeholders": {
+      "minCount": {
+        "type": "int"
+      }
+    }
+  },
+  "containsSpecialChar": "Minimal {minCount} karakter khusus",
+  "@containsSpecialChar": {
+    "placeholders": {
+      "minCount": {
+        "type": "int"
+      }
+    }
+  },
+  "minValue": "Minimal {min}",
+  "@minValue": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      }
+    }
+  },
+  "maxValue": "Maksimal {max}",
+  "@maxValue": {
+    "placeholders": {
+      "max": {
+        "type": "num"
+      }
+    }
+  },
+  "range": "Harus antara {min} dan {max}",
+  "@range": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      },
+      "max": {
+        "type": "num"
+      }
+    }
+  },
+  "positive": "Harus bilangan positif",
+  "negative": "Harus bilangan negatif",
+  "integer": "Harus bilangan bulat",
+  "double": "Harus bilangan desimal",
+  "containsItem": "Harus mengandung item yang ditentukan",
+  "uniqueItems": "Semua item harus unik",
+  "containsKey": "Harus mengandung kunci yang ditentukan",
+  "containsValue": "Harus mengandung nilai yang ditentukan",
+  "passwordMismatch": "Password tidak cocok",
+  "validationError": "Kesalahan validasi"
+}
+
