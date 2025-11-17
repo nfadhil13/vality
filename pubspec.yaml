@@ -43,3 +43,8 @@ melos:
         dart lcov_fix.dart
         genhtml coverage/lcov.info -o coverage/html
       description: Run `dart test` for all packages and generate coverage report.
+
+    analyze:
+      run: |
+        dart analyze
+      description: Run `dart analyze` for all packages.
