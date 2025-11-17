@@ -17,7 +17,8 @@
       "name": "vality",
       "version": "1.0.0",
       "dependencies": [
-        "equatable"
+        "equatable",
+        "meta"
       ],
       "devDependencies": [
         "lints",
@@ -140,6 +141,11 @@
       "dependencies": []
     },
     {
+      "name": "meta",
+      "version": "1.17.0",
+      "dependencies": []
+    },
+    {
       "name": "equatable",
       "version": "2.0.7",
       "dependencies": [
@@ -239,11 +245,6 @@
     {
       "name": "mustache_template",
       "version": "2.0.2",
-      "dependencies": []
-    },
-    {
-      "name": "meta",
-      "version": "1.17.0",
       "dependencies": []
     },
     {
