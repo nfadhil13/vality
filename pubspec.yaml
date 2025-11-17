@@ -9,8 +9,6 @@ dev_dependencies:
   melos: ^7.3.0
 
 melos:
-  sdkPath: .fvm/flutter_sdk
-
   scripts:
     # TEST
     test:
@@ -46,5 +44,5 @@ melos:
 
     analyze:
       run: |
-        dart analyze
+        flutter analyze
       description: Run `dart analyze` for all packages.
