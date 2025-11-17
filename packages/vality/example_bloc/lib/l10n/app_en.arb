@@ -1,0 +1,125 @@
+{
+  "@@locale": "en",
+  "notNull": "This field is required",
+  "notEmpty": "This field cannot be empty",
+  "minLength": "Must be at least {min} characters",
+  "@minLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "maxLength": "Must be at most {max} characters",
+  "@maxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "email": "Please enter a valid email address",
+  "url": "Please enter a valid URL",
+  "contains": "Must contain \"{substring}\"",
+  "@contains": {
+    "placeholders": {
+      "substring": {
+        "type": "String"
+      }
+    }
+  },
+  "containsNofString": "Must contain at least {minCount} occurrence(s) of \"{substring}\"",
+  "@containsNofString": {
+    "placeholders": {
+      "minCount": {
+        "type": "int"
+      },
+      "substring": {
+        "type": "String"
+      }
+    }
+  },
+  "containsNofRegex": "Must contain at least {minCount} match(es)",
+  "@containsNofRegex": {
+    "placeholders": {
+      "minCount": {
+        "type": "int"
+      }
+    }
+  },
+  "startsWith": "Must start with the specified prefix",
+  "endsWith": "Must end with the specified suffix",
+  "matches": "Must match the specified pattern",
+  "alphanumeric": "Only letters and numbers are allowed",
+  "numeric": "Only numbers are allowed",
+  "containsUpperCase": "Must contain at least {minCount} uppercase letter(s)",
+  "@containsUpperCase": {
+    "placeholders": {
+      "minCount": {
+        "type": "int"
+      }
+    }
+  },
+  "containsLowerCase": "Must contain at least {minCount} lowercase letter(s)",
+  "@containsLowerCase": {
+    "placeholders": {
+      "minCount": {
+        "type": "int"
+      }
+    }
+  },
+  "containsNumbers": "Must contain at least {minCount} number(s)",
+  "@containsNumbers": {
+    "placeholders": {
+      "minCount": {
+        "type": "int"
+      }
+    }
+  },
+  "containsSpecialChar": "Must contain at least {minCount} special character(s)",
+  "@containsSpecialChar": {
+    "placeholders": {
+      "minCount": {
+        "type": "int"
+      }
+    }
+  },
+  "minValue": "Must be at least {min}",
+  "@minValue": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      }
+    }
+  },
+  "maxValue": "Must be at most {max}",
+  "@maxValue": {
+    "placeholders": {
+      "max": {
+        "type": "num"
+      }
+    }
+  },
+  "range": "Must be between {min} and {max}",
+  "@range": {
+    "placeholders": {
+      "min": {
+        "type": "num"
+      },
+      "max": {
+        "type": "num"
+      }
+    }
+  },
+  "positive": "Must be a positive number",
+  "negative": "Must be a negative number",
+  "integer": "Must be an integer",
+  "double": "Must be a decimal number",
+  "containsItem": "Must contain the specified item",
+  "uniqueItems": "All items must be unique",
+  "containsKey": "Must contain the specified key",
+  "containsValue": "Must contain the specified value",
+  "passwordMismatch": "Passwords do not match",
+  "validationError": "Validation error"
+}
+

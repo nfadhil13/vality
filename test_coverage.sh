@@ -10,7 +10,7 @@ dart test --coverage=coverage
 echo "Formatting coverage data..."
 dart run coverage:format_coverage \
   --lcov \
-  --in=coverage \
+
   --out=coverage/lcov.info \
   --check-ignore \
   --packages=.dart_tool/package_config.json \

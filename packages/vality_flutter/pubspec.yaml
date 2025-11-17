@@ -1,0 +1,24 @@
+name: vality_flutter
+description: "A new Flutter package project."
+version: 0.0.1
+homepage: https://github.com/vality-io/vality-flutter
+resolution: workspace
+
+environment:
+  sdk: ^3.10.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+# flutter:
+#   uses-material-design: true

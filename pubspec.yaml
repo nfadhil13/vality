@@ -1,16 +1,45 @@
-name: vality
-description: A starting point for Dart libraries or applications.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
-
+name: _
+publish_to: none
 environment:
-  sdk: ^3.0.6
-
-# Add regular dependencies here.
-dependencies:
-  equatable: ^2.0.7
-  # path: ^1.8.0
-
+  sdk: ^3.10.0
+workspace:
+  - packages/vality
+  - packages/vality_flutter
 dev_dependencies:
-  lints: ^2.0.0
-  test: ^1.21.0
+  melos: ^7.3.0
+
+melos:
+  sdkPath: .fvm/flutter_sdk
+
+  scripts:
+    # TEST
+    test:
+      run: melos exec --dir-exists="test" --fail-fast -- fvm flutter test --no-pub --coverage
+      description: Run `dart test` for selected packages.
+
+    test:selective:
+      run: melos exec --dir-exists="test" --fail-fast -- fvm flutter test --no-pub
+      description: Run Flutter tests for a specific package in this project.
+      packageFilters:
+        dirExists: test
+
+    test:coverage:selective:
+      run: |
+        melos exec --dir-exists="test" --fail-fast -- fvm flutter test --no-pub --coverage
+      description: Run `dart test` for a specific package and generate coverage report.
+      packageFilters:
+        dirExists: test
+
+    test:coverage:
+      run: |
+        melos exec rm -rf coverage
+        melos run test
+        dart pub global run combine_coverage --repo-path="$(pwd)"
+      description: Run `dart test` for all packages and generate coverage report.
+
+    test:coverage_to_html:
+      run: |
+        melos run test:coverage
+        dart lcov_fix.dart
+        genhtml coverage/lcov.info -o coverage/html
+      description: Run `dart test` for all packages and generate coverage report.
