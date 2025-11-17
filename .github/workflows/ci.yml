@@ -6,10 +6,8 @@
 name: Dart
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -31,7 +29,7 @@ jobs:
         run: dart pub global activate melos
 
       - name: Install dependencies
-        run: fvm dart pub get
+        run: fvm flutter pub get
 
       # Uncomment this step to verify the use of 'dart format' on each commit.
       # - name: Verify formatting
