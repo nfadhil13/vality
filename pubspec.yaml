@@ -9,6 +9,8 @@ dev_dependencies:
   melos: ^7.3.0
 
 melos:
+  ignore:
+    - "packages/**/example/**"
   scripts:
     # TEST
     test:
@@ -44,5 +46,5 @@ melos:
 
     analyze:
       run: |
-        flutter analyze
+        melos exec --dir-exists="lib" -- flutter analyze
       description: Run `dart analyze` for all packages.
