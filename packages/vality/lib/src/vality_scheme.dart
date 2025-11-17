@@ -35,7 +35,7 @@ class ValitySchema<T> extends Equatable {
   /// Creates a ValitySchema with the given rules
   ///
   /// **Parameters:**
-  /// - `rules` (List<ValityRule<T>>): The validation rules to apply
+  /// - `rules` (List\<ValityRule\<T>>): The validation rules to apply
   ///
   /// **Example:**
   /// ```dart
@@ -54,7 +54,7 @@ class ValitySchema<T> extends Equatable {
   /// Adds a rule to the schema and returns a new schema
   ///
   /// **Parameters:**
-  /// - `rule` (ValityRule<T>): The rule to add
+  /// - `rule` (ValityRule\<T>): The rule to add
   ///
   /// **Returns:** A new ValitySchema with the added rule
   ///

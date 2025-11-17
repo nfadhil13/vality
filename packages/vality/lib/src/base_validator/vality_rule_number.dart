@@ -1,4 +1,4 @@
-part of vality_rule_base;
+part of 'vality_rule_base.dart';
 
 // ============================================================================
 // Number Validators
@@ -20,7 +20,8 @@ part of vality_rule_base;
 ///   print('Minimum: $min, Actual: $value');
 /// }
 /// ```
-ValityRule<num?> minValue(num min) => (value) => value == null || value < min
+ValityRule<num?> minValue(num min) =>
+    (value) => value == null || value < min
     ? ValityIssue(
         code: ValityRuleBase.minValue,
         params: {ValityParams.min: min, ValityParams.value: value},
@@ -43,7 +44,8 @@ ValityRule<num?> minValue(num min) => (value) => value == null || value < min
 ///   print('Maximum: $max, Actual: $value');
 /// }
 /// ```
-ValityRule<num?> maxValue(num max) => (value) => value == null || value > max
+ValityRule<num?> maxValue(num max) =>
+    (value) => value == null || value > max
     ? ValityIssue(
         code: ValityRuleBase.maxValue,
         params: {ValityParams.max: max, ValityParams.value: value},
@@ -69,31 +71,42 @@ ValityRule<num?> maxValue(num max) => (value) => value == null || value > max
 /// }
 /// ```
 ValityRule<num?> range(num min, num max) => (value) {
-      if (value == null) {
-        return ValityIssue(
+  if (value == null) {
+    return ValityIssue(
+      code: ValityRuleBase.range,
+      params: {
+        ValityParams.min: min,
+        ValityParams.max: max,
+        ValityParams.value: 0,
+      },
+    );
+  }
+  return value < min || value > max
+      ? ValityIssue(
           code: ValityRuleBase.range,
-          params: {ValityParams.min: min, ValityParams.max: max, ValityParams.value: 0},
-        );
-      }
-      return value < min || value > max
-          ? ValityIssue(
-              code: ValityRuleBase.range,
-              params: {ValityParams.min: min, ValityParams.max: max, ValityParams.value: value},
-            )
-          : null;
-    };
+          params: {
+            ValityParams.min: min,
+            ValityParams.max: max,
+            ValityParams.value: value,
+          },
+        )
+      : null;
+};
 
 /// Validates that a number is positive (greater than 0)
-ValityRule<num?> positive() => (value) => value == null || value <= 0
+ValityRule<num?> positive() =>
+    (value) => value == null || value <= 0
     ? ValityIssue(code: ValityRuleBase.positive)
     : null;
 
 /// Validates that a number is negative (less than 0)
-ValityRule<num?> negative() => (value) => value == null || value >= 0
+ValityRule<num?> negative() =>
+    (value) => value == null || value >= 0
     ? ValityIssue(code: ValityRuleBase.negative)
     : null;
 
 /// Validates that a number is an integer
-ValityRule<num?> integer() => (value) => value == null || value % 1 != 0
+ValityRule<num?> integer() =>
+    (value) => value == null || value % 1 != 0
     ? ValityIssue(code: ValityRuleBase.integer)
     : null;

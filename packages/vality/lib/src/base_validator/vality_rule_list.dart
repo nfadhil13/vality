@@ -1,4 +1,4 @@
-part of vality_rule_base;
+part of 'vality_rule_base.dart';
 
 // ============================================================================
 // List Length Validators
@@ -60,11 +60,11 @@ ValityRule<List<T>?> maxLengthList<T>(int max) =>
 /// ```
 ValityRule<List<T>?> containsItem<T>(T item) =>
     (value) => value == null || !value.contains(item)
-        ? ValityIssue(
-            code: ValityRuleBase.containsItem,
-            params: {ValityParams.item: item},
-          )
-        : null;
+    ? ValityIssue(
+        code: ValityRuleBase.containsItem,
+        params: {ValityParams.item: item},
+      )
+    : null;
 
 /// Validates that all items in a List are unique
 ///
@@ -81,12 +81,12 @@ ValityRule<List<T>?> containsItem<T>(T item) =>
 /// }
 /// ```
 ValityRule<List<T>?> uniqueItems<T>() => (value) {
-      if (value == null) return ValityIssue(code: ValityRuleBase.uniqueItems);
-      final uniqueSet = value.toSet();
-      return uniqueSet.length != value.length
-          ? ValityIssue(
-              code: ValityRuleBase.uniqueItems,
-              params: {ValityParams.length: value.length},
-            )
-          : null;
-    };
+  if (value == null) return ValityIssue(code: ValityRuleBase.uniqueItems);
+  final uniqueSet = value.toSet();
+  return uniqueSet.length != value.length
+      ? ValityIssue(
+          code: ValityRuleBase.uniqueItems,
+          params: {ValityParams.length: value.length},
+        )
+      : null;
+};

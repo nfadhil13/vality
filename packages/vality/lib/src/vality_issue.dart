@@ -63,7 +63,7 @@ class ValityIssue extends Equatable {
   ///
   /// **Parameters:**
   /// - `code` (String): The error code (required)
-  /// - `params` (Map<String, dynamic>?): Optional parameters for the issue
+  /// - `params` (Map\<String, dynamic>?): Optional parameters for the issue
   ///
   /// **Example:**
   /// ```dart
@@ -72,10 +72,7 @@ class ValityIssue extends Equatable {
   ///   params: {ValityParams.min: 8},
   /// );
   /// ```
-  const ValityIssue({
-    required this.code,
-    this.params,
-  });
+  const ValityIssue({required this.code, this.params});
 
   @override
   List<Object?> get props => [code, params];

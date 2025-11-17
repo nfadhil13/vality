@@ -1,4 +1,4 @@
-part of vality_rule_base;
+part of 'vality_rule_base.dart';
 
 // ============================================================================
 // Set Length Validators
@@ -60,8 +60,8 @@ ValityRule<Set<T>?> maxLengthSet<T>(int max) =>
 /// ```
 ValityRule<Set<T>?> containsItemSet<T>(T item) =>
     (value) => value == null || !value.contains(item)
-        ? ValityIssue(
-            code: ValityRuleBase.containsItem,
-            params: {ValityParams.item: item},
-          )
-        : null;
+    ? ValityIssue(
+        code: ValityRuleBase.containsItem,
+        params: {ValityParams.item: item},
+      )
+    : null;

@@ -1,4 +1,4 @@
-part of vality_rule_base;
+part of 'vality_rule_base.dart';
 
 // ============================================================================
 // Common Validators

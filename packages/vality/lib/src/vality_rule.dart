@@ -27,10 +27,10 @@ class ValityRuleBuilder {
   /// Validates a value against a list of rules
   ///
   /// **Parameters:**
-  /// - `rules` (List<ValityRule<T>>): The list of validation rules to apply
-  /// - `value` (T): The value to validate
+  /// - `rules` (List\<ValityRule\<T>>): The list of validation rules to apply
+  /// - `value` (`T`): The value to validate
   ///
-  /// **Returns:** `ValityIssue?` - The first validation issue found, or `null` if all rules pass
+  /// **Returns:** `ValityIssue?` - The first validation issue found, or `null` if all rules pass.
   ///
   /// **Example:**
   /// ```dart

@@ -1,11 +1,12 @@
-part of vality_rule_base;
+part of 'vality_rule_base.dart';
 
 // ============================================================================
 // String Length Validators
 // ============================================================================
 
 /// Validates that a String is not empty
-ValityRule<String?> notEmpty() => (value) => value == null || value.isEmpty
+ValityRule<String?> notEmpty() =>
+    (value) => value == null || value.isEmpty
     ? ValityIssue(code: ValityRuleBase.notEmpty)
     : null;
 
@@ -56,8 +57,8 @@ ValityRule<String?> email() {
   );
   return (value) =>
       value == null || value.isEmpty || !emailRegex.hasMatch(value)
-          ? ValityIssue(code: ValityRuleBase.email)
-          : null;
+      ? ValityIssue(code: ValityRuleBase.email)
+      : null;
 }
 
 /// Validates that a String is a valid URL
@@ -86,11 +87,11 @@ ValityRule<String?> url() {
 /// ```
 ValityRule<String?> containsString(String substring) =>
     (value) => value == null || !value.contains(substring)
-        ? ValityIssue(
-            code: ValityRuleBase.contains,
-            params: {ValityParams.substring: substring},
-          )
-        : null;
+    ? ValityIssue(
+        code: ValityRuleBase.contains,
+        params: {ValityParams.substring: substring},
+      )
+    : null;
 
 /// Validates that a String contains at least N occurrences of a substring
 /// Useful for password validation like "contains at least one special character"
@@ -114,7 +115,10 @@ ValityRule<String?> containsNofString(String substring, int minCount) =>
       if (value == null || value.isEmpty) {
         return ValityIssue(
           code: ValityRuleBase.containsNofString,
-          params: {ValityParams.substring: substring, ValityParams.minCount: minCount},
+          params: {
+            ValityParams.substring: substring,
+            ValityParams.minCount: minCount,
+          },
         );
       }
       int count = 0;
@@ -126,7 +130,10 @@ ValityRule<String?> containsNofString(String substring, int minCount) =>
       return count < minCount
           ? ValityIssue(
               code: ValityRuleBase.containsNofString,
-              params: {ValityParams.substring: substring, ValityParams.minCount: minCount},
+              params: {
+                ValityParams.substring: substring,
+                ValityParams.minCount: minCount,
+              },
             )
           : null;
     };
@@ -147,20 +154,20 @@ ValityRule<String?> containsNofString(String substring, int minCount) =>
 /// }
 /// ```
 ValityRule<String?> containsNofRegex(RegExp pattern, int minCount) => (value) {
-      if (value == null || value.isEmpty) {
-        return ValityIssue(
+  if (value == null || value.isEmpty) {
+    return ValityIssue(
+      code: ValityRuleBase.containsNofRegex,
+      params: {ValityParams.minCount: minCount},
+    );
+  }
+  final matches = pattern.allMatches(value);
+  return matches.length < minCount
+      ? ValityIssue(
           code: ValityRuleBase.containsNofRegex,
           params: {ValityParams.minCount: minCount},
-        );
-      }
-      final matches = pattern.allMatches(value);
-      return matches.length < minCount
-          ? ValityIssue(
-              code: ValityRuleBase.containsNofRegex,
-              params: {ValityParams.minCount: minCount},
-            )
-          : null;
-    };
+        )
+      : null;
+};
 
 // ============================================================================
 // Character Type Validators (semantic helpers)
@@ -182,21 +189,21 @@ ValityRule<String?> containsNofRegex(RegExp pattern, int minCount) => (value) {
 /// }
 /// ```
 ValityRule<String?> containsUpperCase([int minCount = 1]) => (value) {
-      if (value == null || value.isEmpty) {
-        return ValityIssue(
+  if (value == null || value.isEmpty) {
+    return ValityIssue(
+      code: ValityRuleBase.containsUpperCase,
+      params: {ValityParams.minCount: minCount},
+    );
+  }
+  final pattern = RegExp(ValityRegex.upperCase);
+  final matches = pattern.allMatches(value);
+  return matches.length < minCount
+      ? ValityIssue(
           code: ValityRuleBase.containsUpperCase,
           params: {ValityParams.minCount: minCount},
-        );
-      }
-      final pattern = RegExp(ValityRegex.upperCase);
-      final matches = pattern.allMatches(value);
-      return matches.length < minCount
-          ? ValityIssue(
-              code: ValityRuleBase.containsUpperCase,
-              params: {ValityParams.minCount: minCount},
-            )
-          : null;
-    };
+        )
+      : null;
+};
 
 /// Validates that a String contains at least N lowercase letters
 /// Defaults to 1 if minCount is not specified
@@ -214,21 +221,21 @@ ValityRule<String?> containsUpperCase([int minCount = 1]) => (value) {
 /// }
 /// ```
 ValityRule<String?> containsLowerCase([int minCount = 1]) => (value) {
-      if (value == null || value.isEmpty) {
-        return ValityIssue(
+  if (value == null || value.isEmpty) {
+    return ValityIssue(
+      code: ValityRuleBase.containsLowerCase,
+      params: {ValityParams.minCount: minCount},
+    );
+  }
+  final pattern = RegExp(ValityRegex.lowerCase);
+  final matches = pattern.allMatches(value);
+  return matches.length < minCount
+      ? ValityIssue(
           code: ValityRuleBase.containsLowerCase,
           params: {ValityParams.minCount: minCount},
-        );
-      }
-      final pattern = RegExp(ValityRegex.lowerCase);
-      final matches = pattern.allMatches(value);
-      return matches.length < minCount
-          ? ValityIssue(
-              code: ValityRuleBase.containsLowerCase,
-              params: {ValityParams.minCount: minCount},
-            )
-          : null;
-    };
+        )
+      : null;
+};
 
 /// Validates that a String contains at least N numbers
 /// Defaults to 1 if minCount is not specified
@@ -246,21 +253,21 @@ ValityRule<String?> containsLowerCase([int minCount = 1]) => (value) {
 /// }
 /// ```
 ValityRule<String?> containsNumbers([int minCount = 1]) => (value) {
-      if (value == null || value.isEmpty) {
-        return ValityIssue(
+  if (value == null || value.isEmpty) {
+    return ValityIssue(
+      code: ValityRuleBase.containsNumbers,
+      params: {ValityParams.minCount: minCount},
+    );
+  }
+  final pattern = RegExp(ValityRegex.numbers);
+  final matches = pattern.allMatches(value);
+  return matches.length < minCount
+      ? ValityIssue(
           code: ValityRuleBase.containsNumbers,
           params: {ValityParams.minCount: minCount},
-        );
-      }
-      final pattern = RegExp(ValityRegex.numbers);
-      final matches = pattern.allMatches(value);
-      return matches.length < minCount
-          ? ValityIssue(
-              code: ValityRuleBase.containsNumbers,
-              params: {ValityParams.minCount: minCount},
-            )
-          : null;
-    };
+        )
+      : null;
+};
 
 /// Validates that a String contains at least N special characters
 /// Defaults to 1 if minCount is not specified
@@ -278,47 +285,47 @@ ValityRule<String?> containsNumbers([int minCount = 1]) => (value) {
 /// }
 /// ```
 ValityRule<String?> containsSpecialChar([int minCount = 1]) => (value) {
-      if (value == null || value.isEmpty) {
-        return ValityIssue(
+  if (value == null || value.isEmpty) {
+    return ValityIssue(
+      code: ValityRuleBase.containsSpecialChar,
+      params: {ValityParams.minCount: minCount},
+    );
+  }
+  final pattern = RegExp(ValityRegex.specialChar);
+  final matches = pattern.allMatches(value);
+  return matches.length < minCount
+      ? ValityIssue(
           code: ValityRuleBase.containsSpecialChar,
           params: {ValityParams.minCount: minCount},
-        );
-      }
-      final pattern = RegExp(ValityRegex.specialChar);
-      final matches = pattern.allMatches(value);
-      return matches.length < minCount
-          ? ValityIssue(
-              code: ValityRuleBase.containsSpecialChar,
-              params: {ValityParams.minCount: minCount},
-            )
-          : null;
-    };
+        )
+      : null;
+};
 
 /// Validates that a String starts with a prefix
 ValityRule<String?> startsWithString(String prefix) =>
     (value) => value == null || !value.startsWith(prefix)
-        ? ValityIssue(code: ValityRuleBase.startsWith)
-        : null;
+    ? ValityIssue(code: ValityRuleBase.startsWith)
+    : null;
 
 /// Validates that a String ends with a suffix
 ValityRule<String?> endsWithString(String suffix) =>
     (value) => value == null || !value.endsWith(suffix)
-        ? ValityIssue(code: ValityRuleBase.endsWith)
-        : null;
+    ? ValityIssue(code: ValityRuleBase.endsWith)
+    : null;
 
 /// Validates that a String matches a regular expression
 ValityRule<String?> matchesPattern(RegExp pattern) =>
     (value) => value == null || !pattern.hasMatch(value)
-        ? ValityIssue(code: ValityRuleBase.matches)
-        : null;
+    ? ValityIssue(code: ValityRuleBase.matches)
+    : null;
 
 /// Validates that a String contains only alphanumeric characters
 ValityRule<String?> alphanumeric() {
   final alphanumericRegex = RegExp(r'^[a-zA-Z0-9]+$');
   return (value) =>
       value == null || value.isEmpty || !alphanumericRegex.hasMatch(value)
-          ? ValityIssue(code: ValityRuleBase.alphanumeric)
-          : null;
+      ? ValityIssue(code: ValityRuleBase.alphanumeric)
+      : null;
 }
 
 /// Validates that a String contains only numeric characters
@@ -326,6 +333,6 @@ ValityRule<String?> numeric() {
   final numericRegex = RegExp(r'^[0-9]+$');
   return (value) =>
       value == null || value.isEmpty || !numericRegex.hasMatch(value)
-          ? ValityIssue(code: ValityRuleBase.numeric)
-          : null;
+      ? ValityIssue(code: ValityRuleBase.numeric)
+      : null;
 }

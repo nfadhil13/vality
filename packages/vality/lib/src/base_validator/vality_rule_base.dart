@@ -1,5 +1,3 @@
-library vality_rule_base;
-
 import 'package:vality/src/vality_issue.dart';
 import 'package:vality/src/vality_rule.dart';
 import 'package:vality/src/vality_regex.dart';

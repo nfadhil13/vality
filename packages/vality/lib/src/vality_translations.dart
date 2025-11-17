@@ -252,7 +252,7 @@ class ValityTranslationsHelper {
   /// ```
   @visibleForTesting
   static final Map<String, String Function(ValityTranslations, ValityIssue)>
-      errorCodeRegistry = {
+  errorCodeRegistry = {
     // Common errors
     ValityRuleBase.notNull: (t, issue) => t.notNull(),
     ValityRuleBase.notEmpty: (t, issue) => t.notEmpty(),
@@ -390,10 +390,7 @@ class ValityTranslationsHelper {
   /// 1. Checks the registry map for standard error codes
   /// 2. If not found, calls `translateCustom()` for custom error codes
   /// 3. Falls back to `validationError()` if no translation is found
-  static String translate(
-    ValityIssue issue,
-    ValityTranslations translations,
-  ) {
+  static String translate(ValityIssue issue, ValityTranslations translations) {
     // Check registry for standard error codes
     final translator = errorCodeRegistry[issue.code];
     if (translator != null) {

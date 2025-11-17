@@ -1,4 +1,4 @@
-part of vality_rule_base;
+part of 'vality_rule_base.dart';
 
 // ============================================================================
 // Map Length Validators
@@ -47,11 +47,11 @@ ValityRule<Map<K, V>?> maxLengthMap<K, V>(int max) =>
 /// Validates that a Map contains a specific key
 ValityRule<Map<K, V>?> containsKey<K, V>(K key) =>
     (value) => value == null || !value.containsKey(key)
-        ? ValityIssue(code: ValityRuleBase.containsKey)
-        : null;
+    ? ValityIssue(code: ValityRuleBase.containsKey)
+    : null;
 
 /// Validates that a Map contains a specific value
 ValityRule<Map<K, V>?> containsValue<K, V>(V val) =>
     (value) => value == null || !value.containsValue(val)
-        ? ValityIssue(code: ValityRuleBase.containsValue)
-        : null;
+    ? ValityIssue(code: ValityRuleBase.containsValue)
+    : null;
