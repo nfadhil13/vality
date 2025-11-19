@@ -18,14 +18,15 @@ jobs:
     permissions:
       id-token: write # Required for authentication using OIDC
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/vality
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.38.1"
           channel: stable
-      - name: Move to vality package
-        run: cd packages/vality
       - name: Install dependencies
         run: dart pub get
       - name: Analyze
