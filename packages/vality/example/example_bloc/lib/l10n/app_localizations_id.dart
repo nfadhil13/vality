@@ -12,7 +12,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get notNull => 'Field ini wajib diisi';
 
   @override
-  String get notEmpty => 'Field ini tidak boleh kosong';
+  String get notEmptys => 'Field i ni tidak boleh kosong';
 
   @override
   String minLength(int min) {
