@@ -6,10 +6,6 @@
 name: Dart
 
 on:
-  push:
-    tags:
-      - "vality-v[0-9]+.[0-9]+.[0-9]+"
-      - "vality_flutter-v[0-9]+.[0-9]+.[0-9]+"
   pull_request:
     branches: ["main"]
 
