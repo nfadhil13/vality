@@ -16,7 +16,7 @@ Add `vality` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  vality: ^1.0.0
+  vality: ^0.0.2
 ```
 
 Then run:
