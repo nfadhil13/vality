@@ -15,8 +15,6 @@ on:
 # Publish using the reusable workflow from dart-lang.
 jobs:
   publish:
-    permissions:
-      id-token: write # Required for authentication using OIDC
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -34,6 +32,12 @@ jobs:
       - name: Test
         run: dart test
       - name: Publish
-        run: dart pub publish --force
+        run: dart pub publish --dry-run
+      - name: Publish
+        uses: k-paxian/dart-package-publisher@v1.6.2
+        with:
+          credentialJson: ${{ secrets.CREDENTIAL_JSON }}
+          flutter: false
+          skipTests: true
     # with:
     #   working-directory: path/to/package/within/repository
