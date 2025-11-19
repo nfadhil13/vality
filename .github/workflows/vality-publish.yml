@@ -31,7 +31,7 @@ jobs:
         run: dart analyze
       - name: Test
         run: dart test
-      - name: Publish
+      - name: Dry Publish run
         run: dart pub publish --dry-run
       - name: Publish
         uses: k-paxian/dart-package-publisher@v1.5.1
@@ -39,5 +39,6 @@ jobs:
           credentialJson: ${{ secrets.CREDENTIAL_JSON }}
           flutter: false
           skipTests: true
+          working-directory: packages/vality
     # with:
     #   working-directory: path/to/package/within/repository
