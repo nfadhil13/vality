@@ -9,6 +9,9 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  equatable: ^2.0.7
+  vality:
+    path: ../vality
   flutter:
     sdk: flutter
 

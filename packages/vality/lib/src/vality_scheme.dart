@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:vality/src/vality_issue.dart';
 import 'package:vality/src/vality_rule.dart';
+import 'package:vality/vality.dart';
 
 /// A schema that defines validation rules for a value
 ///
@@ -93,6 +94,10 @@ class ValitySchema<T> extends Equatable {
   /// ```
   ValityIssue? validate(T value) {
     return ValityRuleBuilder.validate<T>(rules, value);
+  }
+
+  ValityField<T> asField(T initialValue) {
+    return ValityField<T>(value: initialValue, schema: this);
   }
 
   @override

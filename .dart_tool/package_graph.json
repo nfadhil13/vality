@@ -29,7 +29,9 @@
       "name": "vality_flutter",
       "version": "0.0.1",
       "dependencies": [
-        "flutter"
+        "equatable",
+        "flutter",
+        "vality"
       ],
       "devDependencies": [
         "flutter_lints",
@@ -104,6 +106,14 @@
       ]
     },
     {
+      "name": "equatable",
+      "version": "2.0.7",
+      "dependencies": [
+        "collection",
+        "meta"
+      ]
+    },
+    {
       "name": "test",
       "version": "1.26.3",
       "dependencies": [
@@ -144,14 +154,6 @@
       "name": "meta",
       "version": "1.17.0",
       "dependencies": []
-    },
-    {
-      "name": "equatable",
-      "version": "2.0.7",
-      "dependencies": [
-        "collection",
-        "meta"
-      ]
     },
     {
       "name": "yaml_edit",
