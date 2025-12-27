@@ -1,6 +1,4 @@
-# Dummy Readyme
-
-<!-- # Vality
+# Vality
 
 A powerful, type-safe validation library for Dart and Flutter. Vality provides a flexible and composable way to validate data with built-in support for strings, numbers, collections, and custom validation rules.
 
@@ -18,7 +16,7 @@ Add `vality` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  vality: ^1.0.0
+  vality: ^0.0.2
 ```
 
 Then run:
@@ -537,4 +535,4 @@ This project is licensed under the MIT License.
 
 ## Additional Information
 
-For more examples, see the `example/` directory in the repository. -->
+For more examples, see the `example/` directory in the repository.

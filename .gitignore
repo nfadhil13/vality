@@ -1,3 +1,5 @@
 .fvm/
 
 coverage/
+
+.dart_tool/

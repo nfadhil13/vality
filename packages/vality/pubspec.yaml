@@ -1,6 +1,6 @@
 name: vality
-description: A starting point for Dart libraries or applications.
-version: 0.0.1-alpah.1
+description: A powerful, type-safe validation library for Dart.
+version: 0.0.2
 resolution: workspace
 repository: https://github.com/nfadhil13/vality
 # repository: https://github.com/my_org/my_repo
